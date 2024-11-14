@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sekolah Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+        }
+        label, input, select, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulir Pengisian Data Sekolah</h1>
+
+    <!-- Form Data Mutasi Masuk -->
+    <form id="dataMutasiMasukForm">
+        <h2>Data Mutasi Masuk</h2>
+        <label for="namaMasuk">Nama:</label>
+        <input type="text" id="namaMasuk" name="namaMasuk" required>
+
+        <label for="asalSekolahMasuk">Asal Sekolah:</label>
+        <input type="text" id="asalSekolahMasuk" name="asalSekolahMasuk" required>
+
+        <label for="diterimaDiKelas">Diterima di Kelas:</label>
+        <input type="text" id="diterimaDiKelas" name="diterimaDiKelas" required>
+
+        <input type="submit" value="Submit Data Mutasi Masuk">
+    </form>
+
+    <!-- Form Data Mutasi Keluar -->
+    <form id="dataMutasiKeluarForm">
+        <h2>Data Mutasi Keluar</h2>
+        <label for="namaKeluar">Nama:</label>
+        <input type="text" id="namaKeluar" name="namaKeluar" required>
+
+        <label for="kelasKeluar">Kelas:</label>
+        <input type="text" id="kelasKeluar" name="kelasKeluar" required>
+
+        <label for="alamatSekolahTujuan">Alamat Sekolah Tujuan:</label>
+        <input type="text" id="alamatSekolahTujuan" name="alamatSekolahTujuan" required>
+
+        <input type="submit" value="Submit Data Mutasi Keluar">
+    </form>
+
+    <!-- Form Penanganan Kasus -->
+    <form id="penangananKasusForm">
+        <h2>Penanganan Kasus</h2>
+        <label for="noKasus">No:</label>
+        <input type="number" id="noKasus" name="noKasus" required>
+
+        <label for="kelasKasus">Kelas:</label>
+        <input type="text" id="kelasKasus" name="kelasKasus" required>
+
+        <label for="namaKasus">Nama:</label>
+        <input type="text" id="namaKasus" name="namaKasus" required>
+
+        <label for="nisKasus">NIS/NISN:</label>
+        <input type="text" id="nisKasus" name="nisKasus" required>
+
+        <label for="kasus">Kasus:</label>
+        <textarea id="kasus" name="kasus" rows="3" required></textarea>
+
+        <label for="penanganan">Penanganan:</label>
+        <textarea id="penanganan" name="penanganan" rows="3" required></textarea>
+
+        <input type="submit" value="Submit Penanganan Kasus">
+    </form>
+
+    <script>
+        // Event listener for Data Mutasi Masuk form
+        document.getElementById('dataMutasiMasukForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nama = document.getElementById('namaMasuk').value;
+            const asalSekolah = document.getElementById('asalSekolahMasuk').value;
+            const diterimaDiKelas = document.getElementById('diterimaDiKelas').value;
+            console.log(`Data Mutasi Masuk - Nama: ${nama}, Asal Sekolah: ${asalSekolah}, Diterima di Kelas: ${diterimaDiKelas}`);
+        });
+
+        // Event listener for Data Mutasi Keluar form
+        document.getElementById('dataMutasiKeluarForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nama = document.getElementById('namaKeluar').value;
+            const kelas = document.getElementById('kelasKeluar').value;
+            const alamatSekolahTujuan = document.getElementById('alamatSekolahTujuan').value;
+            console.log(`Data Mutasi Keluar - Nama: ${nama}, Kelas: ${kelas}, Alamat Sekolah Tujuan: ${alamatSekolahTujuan}`);
+        });
+
+        // Event listener for Penanganan Kasus form
+        document.getElementById('penangananKasusForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const no = document.getElementById('noKasus').value;
+            const kelas = document.getElementById('kelasKasus').value;
+            const nama = document.getElementById('namaKasus').value;
+            const nis = document.getElementById('nisKasus').value;
+            const kasus = document.getElementById('kasus').value;
+            const penanganan = document.getElementById('penanganan').value;
+            console.log(`Penanganan Kasus - No: ${no}, Kelas: ${kelas}, Nama: ${nama}, NIS/NISN: ${nis}, Kasus: ${kasus}, Penanganan: ${penanganan}`);
+        });
+    </script>
+
+</body>
+</html>
